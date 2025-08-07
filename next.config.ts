@@ -1,8 +1,9 @@
-import type { NextConfig } from "next"
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here 
- output: "export",*/
+  output: "export", // 使用靜態匯出才能部署到 GitHub Pages
+  basePath: "/github", // 對應你的 GitHub repo 名稱
+  assetPrefix: "/github", // 用於正確載入 CSS/JS/image 等資源
   images: {
     remotePatterns: [
       {
@@ -22,8 +23,8 @@ const nextConfig: NextConfig = {
         hostname: "picsum.photos",
       },
     ],
-    unoptimized: true, // 為了 export 模式
+    unoptimized: true, // export 模式下強制使用原圖
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
