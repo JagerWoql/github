@@ -1,0 +1,297 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: revert;
+    font-weight: revert;
+  }
+  code,
+  kbd,
+  samp,
+  pre {
+    font-size: revert;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* 動態 viewport 單位支援 */
+  --spacing-dvh: 100dvh;
+  --spacing-dvw: 100dvw;
+  --height-dvh: 100dvh;
+  --width-dvw: 100dvw;
+  --min-height-dvh: 100dvh;
+  --max-height-dvh: 100dvh;
+  --min-width-dvw: 100dvw;
+  --max-width-dvw: 100dvw;
+}
+
+/* Catppuccin Latte (Light Theme) Colors */
+:root {
+  --catppuccin-rosewater: oklch(71.74116013% 0.103366074 33.35597777);
+  --catppuccin-flamingo: oklch(68.67327405% 0.125864798 20.85695994);
+  --catppuccin-pink: oklch(72.54136483% 0.173187324 338.3890943);
+  --catppuccin-mauve: oklch(55.42258565% 0.250384687 296.9555577);
+  --catppuccin-red: oklch(54.99871148% 0.215493976 19.80344757);
+  --catppuccin-maroon: oklch(62.7249899% 0.194667779 20.26704716);
+  --catppuccin-peach: oklch(69.19999436% 0.203582183 42.52171424);
+  --catppuccin-yellow: oklch(70.99120829% 0.148453841 67.88986932);
+  --catppuccin-green: oklch(62.83370713% 0.178430048 140.3879357);
+  --catppuccin-teal: oklch(61.01024547% 0.099485817 200.6473803);
+  --catppuccin-sky: oklch(68.68248871% 0.145810416 235.3248207);
+  --catppuccin-sapphire: oklch(64.96485523% 0.10724385 213.2067257);
+  --catppuccin-blue: oklch(55.85743771% 0.224516164 262.1352355);
+  --catppuccin-lavender: oklch(66.41151006% 0.174673158 273.2104687);
+  --catppuccin-text: oklch(43.11747591% 0.04260469 279.5111928);
+  --catppuccin-subtext-1: oklch(48.8779718% 0.038605085 278.9744532);
+  --catppuccin-subtext-0: oklch(54.57513834% 0.033047387 279.3130378);
+  --catppuccin-overlay-2: oklch(59.88522493% 0.031722817 278.4862364);
+  --catppuccin-overlay-1: oklch(65.37963916% 0.026568402 277.6966039);
+  --catppuccin-overlay-0: oklch(70.71717744% 0.023238899 274.6089522);
+  --catppuccin-surface-2: oklch(75.85521969% 0.020275004 273.5467487);
+  --catppuccin-surface-1: oklch(80.90919928% 0.017850199 271.1924452);
+  --catppuccin-surface-0: oklch(85.95029768% 0.014370262 268.6673689);
+  --catppuccin-base: oklch(95.85881342% 0.005635575 264.5325933);
+  --catppuccin-mantle: oklch(93.37753109% 0.008689726 264.520685);
+  --catppuccin-crust: oklch(90.89821103% 0.011492245 264.5082117);
+
+  /* Design System Colors using Catppuccin Latte */
+  --radius: 0.625rem;
+  --background: var(--catppuccin-base);
+  --foreground: var(--catppuccin-text);
+  --card: var(--catppuccin-surface-0);
+  --card-foreground: var(--catppuccin-text);
+  --popover: var(--catppuccin-surface-0);
+  --popover-foreground: var(--catppuccin-text);
+  --primary: var(--catppuccin-blue);
+  --primary-foreground: var(--catppuccin-base);
+  --secondary: var(--catppuccin-surface-1);
+  --secondary-foreground: var(--catppuccin-text);
+  --muted: var(--catppuccin-surface-1);
+  --muted-foreground: var(--catppuccin-subtext-1);
+  --accent: var(--catppuccin-surface-2);
+  --accent-foreground: var(--catppuccin-text);
+  --destructive: var(--catppuccin-red);
+  --destructive-foreground: var(--catppuccin-base);
+  --border: var(--catppuccin-surface-2);
+  --input: var(--catppuccin-surface-0);
+  --ring: var(--catppuccin-blue);
+  --chart-1: var(--catppuccin-red);
+  --chart-2: var(--catppuccin-green);
+  --chart-3: var(--catppuccin-blue);
+  --chart-4: var(--catppuccin-yellow);
+  --chart-5: var(--catppuccin-pink);
+  --sidebar: var(--catppuccin-mantle);
+  --sidebar-foreground: var(--catppuccin-text);
+  --sidebar-primary: var(--catppuccin-blue);
+  --sidebar-primary-foreground: var(--catppuccin-base);
+  --sidebar-accent: var(--catppuccin-surface-1);
+  --sidebar-accent-foreground: var(--catppuccin-text);
+  --sidebar-border: var(--catppuccin-surface-1);
+  --sidebar-ring: var(--catppuccin-blue);
+}
+
+/* Catppuccin Mocha (Dark Theme) Colors */
+.dark {
+  --catppuccin-rosewater: oklch(92.1276726% 0.024395175 31.11280359);
+  --catppuccin-flamingo: oklch(88.30547915% 0.040734881 17.94985422);
+  --catppuccin-pink: oklch(86.94092407% 0.076113371 335.9867457);
+  --catppuccin-mauve: oklch(78.65216413% 0.11908172 304.4461735);
+  --catppuccin-red: oklch(75.66607121% 0.128906191 2.439476239);
+  --catppuccin-maroon: oklch(77.81109881% 0.092081701 8.48776514);
+  --catppuccin-peach: oklch(82.05499471% 0.103518155 52.64947736);
+  --catppuccin-yellow: oklch(91.77836819% 0.070617852 85.98523383);
+  --catppuccin-green: oklch(85.74645321% 0.109094806 142.526179);
+  --catppuccin-teal: oklch(85.63717893% 0.079656153 182.722927);
+  --catppuccin-sky: oklch(84.766766% 0.083297784 209.9252304);
+  --catppuccin-sapphire: oklch(78.83279619% 0.096783784 229.633068);
+  --catppuccin-blue: oklch(76.81358314% 0.110621598 259.6615445);
+  --catppuccin-lavender: oklch(81.53769875% 0.091401697 277.398158);
+  --catppuccin-text: oklch(87.84298226% 0.042632164 272.0939985);
+  --catppuccin-subtext-1: oklch(81.6650729% 0.040228038 273.2477288);
+  --catppuccin-subtext-0: oklch(75.22371273% 0.040100707 274.3158935);
+  --catppuccin-overlay-2: oklch(68.90459278% 0.037335693 274.3028984);
+  --catppuccin-overlay-1: oklch(61.22416184% 0.0380388 276.3187429);
+  --catppuccin-overlay-0: oklch(54.51384988% 0.035196412 277.2962912);
+  --catppuccin-surface-2: oklch(47.42295803% 0.03413019 279.104801);
+  --catppuccin-surface-1: oklch(40.27785529% 0.031140269 279.928692);
+  --catppuccin-surface-0: oklch(32.4796382% 0.031555628 282.1347975);
+  --catppuccin-base: oklch(24.38182366% 0.030450992 283.9132412);
+  --catppuccin-mantle: oklch(21.6189235% 0.02510869 284.1033834);
+  --catppuccin-crust: oklch(18.61446955% 0.0214114 284.1274629);
+
+  /* Design System Colors using Catppuccin Mocha */
+  --background: var(--catppuccin-base);
+  --foreground: var(--catppuccin-text);
+  --card: var(--catppuccin-surface-0);
+  --card-foreground: var(--catppuccin-text);
+  --popover: var(--catppuccin-surface-0);
+  --popover-foreground: var(--catppuccin-text);
+  --primary: var(--catppuccin-blue);
+  --primary-foreground: var(--catppuccin-base);
+  --secondary: var(--catppuccin-surface-1);
+  --secondary-foreground: var(--catppuccin-text);
+  --muted: var(--catppuccin-surface-1);
+  --muted-foreground: var(--catppuccin-subtext-1);
+  --accent: var(--catppuccin-surface-2);
+  --accent-foreground: var(--catppuccin-text);
+  --destructive: var(--catppuccin-red);
+  --destructive-foreground: var(--catppuccin-base);
+  --border: var(--catppuccin-surface-2);
+  --input: var(--catppuccin-surface-0);
+  --ring: var(--catppuccin-blue);
+  --chart-1: var(--catppuccin-red);
+  --chart-2: var(--catppuccin-green);
+  --chart-3: var(--catppuccin-blue);
+  --chart-4: var(--catppuccin-yellow);
+  --chart-5: var(--catppuccin-pink);
+  --sidebar: var(--catppuccin-mantle);
+  --sidebar-foreground: var(--catppuccin-text);
+  --sidebar-primary: var(--catppuccin-blue);
+  --sidebar-primary-foreground: var(--catppuccin-base);
+  --sidebar-accent: var(--catppuccin-surface-1);
+  --sidebar-accent-foreground: var(--catppuccin-text);
+  --sidebar-border: var(--catppuccin-surface-1);
+  --sidebar-ring: var(--catppuccin-blue);
+}
+
+@layer utilities {
+  /* 手機版觸控優化 */
+  @media (max-width: 768px) {
+    /* 確保觸控目標至少 44px */
+    button,
+    [role="button"],
+    input[type="button"],
+    input[type="submit"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* 動態 viewport 單位 fallback */
+    .min-h-dvh {
+      min-height: 100vh; /* fallback */
+      min-height: 100dvh;
+    }
+
+    .h-dvh {
+      height: 100vh; /* fallback */
+      height: 100dvh;
+    }
+
+    .w-dvw {
+      width: 100vw; /* fallback */
+      width: 100dvw;
+    }
+
+    .max-w-dvw {
+      max-width: 100vw; /* fallback */
+      max-width: 100dvw;
+    }
+  }
+
+  /* 支援動態 viewport 單位 */
+  @supports (height: 100dvh) {
+    .min-h-dvh {
+      min-height: 100dvh;
+    }
+
+    .h-dvh {
+      height: 100dvh;
+    }
+  }
+
+  @supports (width: 100dvw) {
+    .w-dvw {
+      width: 100dvw;
+    }
+
+    .max-w-dvw {
+      max-width: 100dvw;
+    }
+  }
+
+  /* 手機版優化 */
+  @media (max-width: 768px) {
+    html,
+    body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* 確保所有容器不會超出螢幕寬度 */
+    .container,
+    main,
+    section,
+    article,
+    div {
+      max-width: 100vw;
+    }
+  }
+
+  /* 動態 viewport 手機版支援 */
+  @supports (width: 100dvw) {
+    @media (max-width: 768px) {
+      html,
+      body {
+        max-width: 100dvw;
+      }
+
+      .container,
+      main,
+      section,
+      article,
+      div {
+        max-width: 100dvw;
+      }
+    }
+  }
+}
